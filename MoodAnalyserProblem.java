@@ -16,7 +16,7 @@ public class MoodAnalyserProblem {
 	}
 	
 	//Analyze mood function
-	public String analyseMood() {
+	public String analyseMood() throws MoodAnalysisException {
 
 		try {
 			if (this.message.contains("SAD")) {
@@ -26,7 +26,7 @@ public class MoodAnalyserProblem {
 			return  "HAPPY";
 		}
 		catch(NullPointerException e) {
-			return "HAPPY";
+			throw new MoodAnalysisException("Please enter valid mood");
 		}
 	}
 	
