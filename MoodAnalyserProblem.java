@@ -17,13 +17,17 @@ public class MoodAnalyserProblem {
 	
 	//Analyze mood function
 	public String analyseMood() {
-		String mood="";
-		if (this.message.contains("SAD")) {
-			mood = "SAD";
-		} else {
-			mood = "HAPPY";
+
+		try {
+			if (this.message.contains("SAD")) {
+				return "SAD";
+			}
+		else 
+			return  "HAPPY";
 		}
-		return mood;
+		catch(NullPointerException e) {
+			return "HAPPY";
+		}
 	}
 	
 	public static void main(String[] args) {
