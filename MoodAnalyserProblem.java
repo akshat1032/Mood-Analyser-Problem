@@ -1,5 +1,6 @@
 package com.capgemini.moodanalyserproblem;
 
+
 public class MoodAnalyserProblem {
 	
 	//Instance variable
@@ -17,9 +18,9 @@ public class MoodAnalyserProblem {
 	//Analyze mood function
 	public String analyseMood() {
 		String mood="";
-		if (this.message.equals("I am in SAD Mood")) {
+		if (this.message.contains("SAD")) {
 			mood = "SAD";
-		} else if (this.message.equals("I am in Any Mood")) {
+		} else {
 			mood = "HAPPY";
 		}
 		return mood;

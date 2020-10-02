@@ -10,15 +10,19 @@ public class TestMoodAnalyserProblem {
 	
 	private MoodAnalyserProblem moodObject;
 	@Test
-	public void testAnanlyseMood() {
+	public void testAnanlyseMoodSad() {
 		
-		//Test Case 1.1
+		//Test Case 1.1 Sad mood
 		moodObject = new MoodAnalyserProblem("I am in SAD Mood");
 		String expectedResultSad = "SAD";
 		String actualResultSad = moodObject.analyseMood();
 		assertEquals(expectedResultSad, actualResultSad);
+	}
+	
+	@Test
+	public void testAnalyseMoodHappy() {
 		
-		//Test Case 1.2
+		//Test Case 1.2 Happy mood
 		moodObject = new MoodAnalyserProblem("I am in Any Mood");
 		String expectedResultHappy = "HAPPY";
 		String actualResultHappy = moodObject.analyseMood();
