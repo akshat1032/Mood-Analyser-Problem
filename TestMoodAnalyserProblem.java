@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.capgemini.moodanalyserproblem.MoodAnalyserProblem;
+import com.capgemini.moodanalyserproblem.MoodAnalysisException;
 
 public class TestMoodAnalyserProblem {
 	
@@ -16,7 +17,12 @@ public class TestMoodAnalyserProblem {
 		//Test Case 1.1 Sad mood
 		moodObject = new MoodAnalyserProblem("I am in SAD Mood");
 		String expectedResultSad = "SAD";
-		mood = moodObject.analyseMood();
+		try {
+			mood = moodObject.analyseMood();
+		} catch (MoodAnalysisException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		assertEquals(expectedResultSad, mood);
 	}
 	
@@ -26,7 +32,12 @@ public class TestMoodAnalyserProblem {
 		//Test Case 1.2 Happy mood
 		moodObject = new MoodAnalyserProblem("I am in Any Mood");
 		String expectedResultHappy = "HAPPY";
-		mood = moodObject.analyseMood();
+		try {
+			mood = moodObject.analyseMood();
+		} catch (MoodAnalysisException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		assertEquals(expectedResultHappy, mood);
 	}
 	
@@ -39,7 +50,7 @@ public class TestMoodAnalyserProblem {
 		try {
 		mood = moodObject.analyseMood();
 		}
-		catch(NullPointerException e) {
+		catch(NullPointerException | MoodAnalysisException e) {
 			e.printStackTrace();
 		}
 		assertEquals(expectedResultNull, mood);
